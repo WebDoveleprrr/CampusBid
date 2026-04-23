@@ -15,8 +15,7 @@ frontend/.env
 # ========================
 # BUILD FILES
 # ========================
-dist
-frontend/dist
+
 
 # ========================
 # UPLOADS (your project uses this)
