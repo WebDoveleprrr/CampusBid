@@ -260,7 +260,7 @@ io.on('connection', (socket) => {
 // Serve frontend
 app.use(express.static(frontendPath));
 
-app.use((req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
