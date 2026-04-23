@@ -17,6 +17,7 @@ const notificationRoutes = require('./routes/notifications');
 const Product = require('./models/Product');
 const Message = require('./models/Message');
 const seedData = require('./utils/seedData');
+const frontendPath = path.join(__dirname, '../frontend/dist');
 
 connectDB().then(() => {
   seedData(); // Run seeder after db connection
@@ -254,10 +255,10 @@ io.on('connection', (socket) => {
 });
 
 // Serve frontend
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(frontendPath));
 
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
