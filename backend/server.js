@@ -17,7 +17,7 @@ const notificationRoutes = require('./routes/notifications');
 const Product = require('./models/Product');
 const Message = require('./models/Message');
 const seedData = require('./utils/seedData');
-const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendPath = path.join(__dirname, 'frontend', 'dist');
 
 console.log("DIRNAME:", __dirname);
 console.log("FRONTEND PATH:", frontendPath);
@@ -260,7 +260,7 @@ io.on('connection', (socket) => {
 // Serve frontend
 app.use(express.static(frontendPath));
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
