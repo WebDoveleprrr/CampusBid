@@ -17,7 +17,7 @@ const notificationRoutes = require('./routes/notifications');
 const Product = require('./models/Product');
 const Message = require('./models/Message');
 const seedData = require('./utils/seedData');
-const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendPath = path.join(__dirname, 'frontend', 'dist');
 
 console.log("DIRNAME:", __dirname);
 console.log("FRONTEND PATH:", frontendPath);
