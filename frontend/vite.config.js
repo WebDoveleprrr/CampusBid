@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/<REPO_NAME>/',
+  base: '/',
   server: {
     proxy: {
       '/api': 'http://127.0.0.1:3000',
