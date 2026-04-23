@@ -17,7 +17,7 @@ const notificationRoutes = require('./routes/notifications');
 const Product = require('./models/Product');
 const Message = require('./models/Message');
 const seedData = require('./utils/seedData');
-const frontendPath = path.join(__dirname, '../frontend/dist');
+const frontendPath = path.resolve(__dirname, '../frontend/dist');
 
 connectDB().then(() => {
   seedData(); // Run seeder after db connection
@@ -253,6 +253,9 @@ io.on('connection', (socket) => {
     console.log('User disconnected', socket.id);
   });
 });
+
+console.log("DIRNAME:", __dirname);
+console.log("FRONTEND PATH:", frontendPath);
 
 // Serve frontend
 app.use(express.static(frontendPath));
