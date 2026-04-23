@@ -257,10 +257,11 @@ io.on('connection', (socket) => {
   });
 });
 
-// Serve frontend
+// Serve static frontend
 app.use(express.static(frontendPath));
 
-app.get('*', (req, res) => {
+// SPA fallback — Express 5 compatible (no bare wildcard)
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
